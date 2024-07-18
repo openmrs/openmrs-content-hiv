@@ -3,9 +3,13 @@
 This is the OpenMRS HIV care and treatment content package.
 
 The contents of this package are:
-> Configuration
+> configs/initalizer_config
 
-This folder holds initializer compatible configuration metadata that makes up the HIV care and treatment content package. There are forms, OCL concepts, programs, encounter types, workflows, identifiers and other metadata. 
->  content.properties
+This folder holds Initializer compatible configuration metadata that makes up the HIV care and treatment content package. There are forms, OCL concepts, programs, encounter types, workflows, identifiers and other metadata. 
 
-In this file, the required ESMs and OMODs that make up the HIV care and treatment content package are specified. 
+> configs/frontend_config
+(WIP) Any configuration of the O3 frontend.
+
+
+> configs/frontend_assembly
+Required ESMs that make up the HIV care and treatment content package, defined in a `spa-assemble-config.json` file
