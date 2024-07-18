@@ -1,0 +1,9 @@
+{
+    "frontendModules": {
+        "@ohri/openmrs-esm-ohri-hiv-care-treatment-app": "latest",
+        "@ohri/openmrs-esm-ohri-core-app": "latest"
+    },
+    "__comment": "We exclude all default modules to esnure we are using the specified versions.",
+    "frontendModuleExcludes": [
+   ]
+}

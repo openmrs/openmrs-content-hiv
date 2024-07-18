@@ -1,9 +1,181 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>org.openmrs</groupId>
   <artifactId>openmrs-content-hiv</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <name>Archetype - openmrs-content-hiv</name>
-  <url>http://maven.apache.org</url>
+  <version>1.0-0-SNAPSHOT</version>
+  <name>OpenMRS content package for HIV care</name>
+  <packaging>pom</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+      <!-- Add any OMOD dependency here -->
+      <dependency>
+        <groupId>org.openmrs.module</groupId>
+        <artifactId>kenyacore-omod</artifactId>
+        <version>3.0.1</version>
+      </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.3.1</version>
+        <executions>
+          <execution>
+            <!-- Copy the package resources -->
+            <id>Copy configuration/ folder</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>
+                ${project.build.directory}/${project.artifactId}-${project.version}/configs/</outputDirectory>
+              <overwrite>true</overwrite>
+              <resources>
+                <resource>
+                  <directory>${project.basedir}/configs/</directory>
+                  <filtering>false</filtering>
+                </resource>
+                </resources>
+            </configuration>
+          </execution>
+
+          <execution>
+            <!-- Copy the spa-assemble-config.json -->
+            <id>Copy spa-assemble-config.json</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>
+                ${project.build.directory}/${project.artifactId}-${project.version}/</outputDirectory>
+              <overwrite>true</overwrite>
+              <resources>
+                <resource>
+                  <directory>${project.basedir}/</directory>
+                  <includes>
+                    <include>spa-assemble-config.json</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+
+          <execution>
+            <!-- Copy OpenMRS modules -->
+            <id>Copy OpenMRS modules</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>
+                ${project.build.directory}/${project.artifactId}-${project.version}/binaries/modules</outputDirectory>
+              <overwrite>true</overwrite>
+              <resources>
+                <resource>
+                  <directory>${project.build.directory}/openmrs_modules</directory>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>Rename JAR to OMOD</id>
+            <phase>process-resources</phase>
+            <configuration>
+              <target>
+                <move todir="${project.build.directory}/openmrs_modules">
+                  <fileset dir="${project.build.directory}/openmrs_modules" />
+                  <mapper from="^(.+)-omod-(.+)\.jar" to="\1-\2.omod" type="regexp" />
+                </move>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+
+          <execution>
+            <id>Remove non-OMODs from Modules</id>
+            <!-- Because we copy all dependencies, it's possible to get non-OMOD Jars in the
+            openmrs_modules folder.
+                 This job, run after "Rename JAR to OMOD" removes the non-OMODs -->
+            <phase>process-resources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <delete>
+                  <fileset dir="${project.build.directory}/openmrs_modules" excludes="**/*.omod" />
+                </delete>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>Copy OpenMRS modules to a temporary location</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <excludeTransitive>true</excludeTransitive>
+              <useBaseVersion>true</useBaseVersion>
+              <outputDirectory>${project.build.directory}/openmrs_modules/</outputDirectory>
+              <!-- Copying JARs and OMODs only. -->
+              <includeTypes>jar, omod</includeTypes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- packaging as a Zip file -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <id>Package Ozone Artifact</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <appendAssemblyId>false</appendAssemblyId>
+              <descriptors>
+                <descriptor>assembly.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
