@@ -4,9 +4,9 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.openmrs</groupId>
+  <groupId>org.openmrs.content</groupId>
   <artifactId>openmrs-content-hiv</artifactId>
-  <version>1.0-0-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <name>OpenMRS content package for HIV care</name>
   <packaging>pom</packaging>
 
@@ -15,12 +15,18 @@
   </properties>
 
   <dependencies>
-      <!-- Add any OMOD dependency here -->
-      <dependency>
-        <groupId>org.openmrs.module</groupId>
-        <artifactId>kenyacore-omod</artifactId>
-        <version>3.0.1</version>
-      </dependency>
+    <!-- Add any OMOD dependency here -->
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>fhir2-omod</artifactId>
+      <version>2.2.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>webservices.rest-omod</artifactId>
+      <version>2.40.0-SNAPSHOT</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -46,7 +52,7 @@
                   <directory>${project.basedir}/configs/</directory>
                   <filtering>false</filtering>
                 </resource>
-                </resources>
+              </resources>
             </configuration>
           </execution>
 
@@ -72,84 +78,49 @@
             </configuration>
           </execution>
 
-          <execution>
-            <!-- Copy OpenMRS modules -->
-            <id>Copy OpenMRS modules</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>
-                ${project.build.directory}/${project.artifactId}-${project.version}/binaries/modules</outputDirectory>
-              <overwrite>true</overwrite>
-              <resources>
-                <resource>
-                  <directory>${project.build.directory}/openmrs_modules</directory>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-
         </executions>
       </plugin>
-
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>Rename JAR to OMOD</id>
-            <phase>process-resources</phase>
-            <configuration>
-              <target>
-                <move todir="${project.build.directory}/openmrs_modules">
-                  <fileset dir="${project.build.directory}/openmrs_modules" />
-                  <mapper from="^(.+)-omod-(.+)\.jar" to="\1-\2.omod" type="regexp" />
-                </move>
-              </target>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-
-          <execution>
-            <id>Remove non-OMODs from Modules</id>
-            <!-- Because we copy all dependencies, it's possible to get non-OMOD Jars in the
-            openmrs_modules folder.
-                 This job, run after "Rename JAR to OMOD" removes the non-OMODs -->
-            <phase>process-resources</phase>
-            <goals>
-              <goal>run</goal>
-            </goals>
-            <configuration>
-              <target>
-                <delete>
-                  <fileset dir="${project.build.directory}/openmrs_modules" excludes="**/*.omod" />
-                </delete>
-              </target>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
-            <id>Copy OpenMRS modules to a temporary location</id>
+            <id>Unpack content packages OMODs</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>copy-dependencies</goal>
             </goals>
             <configuration>
-              <excludeTransitive>true</excludeTransitive>
               <useBaseVersion>true</useBaseVersion>
-              <outputDirectory>${project.build.directory}/openmrs_modules/</outputDirectory>
-              <!-- Copying JARs and OMODs only. -->
-              <includeTypes>jar, omod</includeTypes>
+              <excludeTransitive>true</excludeTransitive>
+              <outputDirectory>${project.build.directory}/openmrs_modules</outputDirectory>
+              <includeGroupIds>org.openmrs.module</includeGroupIds>
             </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <id>Rename and copy OMODs</id>
+            <phase>package</phase>
+            <configuration>
+              <target>
+                <copy
+                  todir="${project.build.directory}/${project.artifactId}-${project.version}/binaries/modules">
+                  <fileset dir="${project.build.directory}/openmrs_modules">
+                    <include name="**/*omod*.jar" />
+                  </fileset>
+                  <mapper type="regexp" from="^(.*)-omod(.*).jar$" to="\1\2.omod" />
+                </copy>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
@@ -178,4 +149,11 @@
     </plugins>
   </build>
 
+  <repositories>
+    <repository>
+      <id>openmrs-repo</id>
+      <name>OpenMRS Public Repository</name>
+      <url>https://mavenrepo.openmrs.org/public</url>
+    </repository>
+  </repositories>
 </project>
