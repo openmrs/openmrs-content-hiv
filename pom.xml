@@ -3,13 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.openmrs</groupId>
-	<artifactId>content.hiv</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
-	<name>HIV Care and Treatment Content Package</name>
-	<description>Content package for HIV care and treatment module in OpenMRS</description>
-	<url>https://openmrs.org</url>
+ 	<groupId>org.openmrs.content</groupId>
+  	<artifactId>openmrs-content-hiv</artifactId>
+  	<version>1.0-SNAPSHOT</version>
+  	<name>OpenMRS HIV Content Package</name>		
+	<packaging>pom</packaging>
 	<developers>
 		<developer>
 			<name>OpenMRS</name>
@@ -22,51 +20,30 @@
 		<developerConnection>scm:git:git@github.com:openmrs/openmrs-content-hiv.git</developerConnection>
 		<url>https://github.com/openmrs/openmrs-content-hiv.git</url>
 		<tag>HEAD</tag>
-	</scm>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-	</properties>
+	</scm>	
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.13.2</version>
-			<scope>test</scope>
-		</dependency>
+            <groupId>org.openmrs.maven.plugins</groupId>
+            <artifactId>openmrs-packager-maven-plugin</artifactId>
+            <version>1.8.0-SNAPSHOT</version>
+        </dependency>
 	</dependencies>
 	<build>
-		<plugins>
+		<plugins>			
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>3.0.0</version>
+				<groupId>org.openmrs.maven.plugins</groupId>
+				<artifactId>openmrs-packager-maven-plugin</artifactId>
+				<version>1.8.0-SNAPSHOT</version>
 				<executions>
 					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
+						<id>validate-assemble</id>
+						<phase>package</phase>						
 						<configuration>
-							<target>
-								<java classname="org.openmrs.maven.plugins.model.ContentPropertiesValidator" fork="true" failonerror="true">
-									<arg value="${project.basedir}/content.properties"/>
-									<classpath>
-										<path refid="maven.runtime.classpath"/>
-									</classpath>
-								</java>
-							</target>
+							<sourceFile>{project.basedir}/content.properties</sourceFile>
 						</configuration>
+						<goals>
+						<goal>validate-assemble</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
@@ -91,7 +68,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin>			
 		</plugins>
 	</build>
 	<distributionManagement>
