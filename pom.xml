@@ -1,13 +1,11 @@
-<project
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
- 	<groupId>org.openmrs.content</groupId>
-  	<artifactId>openmrs-content-hiv</artifactId>
-  	<version>1.0-SNAPSHOT</version>
-  	<name>OpenMRS HIV Content Package</name>		
+	<groupId>org.openmrs.content</groupId>
+	<artifactId>openmrs-content-hiv</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>OpenMRS HIV Content Package</name>
 	<packaging>pom</packaging>
+
 	<developers>
 		<developer>
 			<name>OpenMRS</name>
@@ -19,38 +17,47 @@
 		<connection>scm:git:git@github.com:openmrs/openmrs-content-hiv.git</connection>
 		<developerConnection>scm:git:git@github.com:openmrs/openmrs-content-hiv.git</developerConnection>
 		<url>https://github.com/openmrs/openmrs-content-hiv.git</url>
-		<tag>HEAD</tag>
-	</scm>	
+
+	</scm>
 	<dependencies>
 		<dependency>
-            <groupId>org.openmrs.maven.plugins</groupId>
-            <artifactId>openmrs-packager-maven-plugin</artifactId>
-            <version>1.8.0-SNAPSHOT</version>
-        </dependency>
+			<groupId>org.openmrs.maven.plugins</groupId>
+			<artifactId>openmrs-packager-maven-plugin</artifactId>
+			<version>1.8.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
-		<plugins>			
+		<resources>
+			<resource>
+				<directory>${project.basedir}</directory>
+				<includes>
+					<include>content.properties</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
 			<plugin>
 				<groupId>org.openmrs.maven.plugins</groupId>
 				<artifactId>openmrs-packager-maven-plugin</artifactId>
 				<version>1.8.0-SNAPSHOT</version>
 				<executions>
 					<execution>
-						<id>validate-assemble</id>
-						<phase>package</phase>						
-						<configuration>
-							<sourceFile>{project.basedir}/content.properties</sourceFile>
-						</configuration>
+						<id>validate-content-package</id>
+						<phase>verify</phase>
 						<goals>
-						<goal>validate-assemble</goal>
+							<goal>validate-content-package</goal>
 						</goals>
+						<configuration>
+							<sourceFile>${project.basedir}/content.properties</sourceFile>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>3.3.0</version>
+				<version>3.7.1</version>
 				<executions>
 					<execution>
 						<id>make-assembly</id>
@@ -62,25 +69,66 @@
 							<descriptors>
 								<descriptor>${project.basedir}/assembly.xml</descriptor>
 							</descriptors>
+							<!-- Setting appendAssemblyId to false ensures that the assembly ID 
+							is not appended to the final name of the assembled artifact -->
 							<appendAssemblyId>false</appendAssemblyId>
-							<!-- Ensure this is set to false -->
 							<finalName>${project.artifactId}-${project.version}</finalName>
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>			
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>3.1.1</version>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<useReleaseProfile>false</useReleaseProfile>
+					<releaseProfiles>release</releaseProfiles>
+					<preparationGoals>clean install</preparationGoals>
+					<goals>deploy</goals>
+					<tagNameFormat>@{project.version}</tagNameFormat>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.3.1</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.basedir}</directory>
+									<includes>
+										<include>content.properties</include>
+									</includes>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+
 	<distributionManagement>
 		<repository>
-			<id>openmrs-repo-releases</id>
-			<name>OpenMRS Nexus Releases</name>
-			<url>https://mavenrepo.openmrs.org/nexus/content/repositories/releases</url>
+			<id>openmrs-repo-modules</id>
+			<name>OpenMRS Nexus Modules</name>
+			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/modules</url>
 		</repository>
 		<snapshotRepository>
 			<id>openmrs-repo-snapshots</id>
 			<name>OpenMRS Nexus Snapshots</name>
-			<url>https://mavenrepo.openmrs.org/nexus/content/repositories/snapshots</url>
+			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
