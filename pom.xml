@@ -39,16 +39,16 @@
 							<sourceFile>${project.basedir}/content.properties</sourceFile>
 						</configuration>
 					</execution>
-					<!--<execution>
+					<execution>
 						<id>validate-configurations</id>
 						<phase>verify</phase>
 						<goals>
 							<goal>validate-configurations</goal>
 						</goals>
 						<configuration>
-							<sourceDir>${project.basedir}/configs</sourceDir>
+							<sourceDir>${project.basedir}/configs/backend_config</sourceDir>
 						</configuration>						
-					</execution> -->
+					</execution>
 				</executions>
 			</plugin>
 			<plugin>
