@@ -1,7 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openmrs.content</groupId>
-	<artifactId>openmrs-content-hiv</artifactId>
+	<artifactId>hiv</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>OpenMRS HIV Content Package</name>
 	<packaging>pom</packaging>
@@ -17,25 +18,11 @@
 		<connection>scm:git:git@github.com:openmrs/openmrs-content-hiv.git</connection>
 		<developerConnection>scm:git:git@github.com:openmrs/openmrs-content-hiv.git</developerConnection>
 		<url>https://github.com/openmrs/openmrs-content-hiv.git</url>
-
 	</scm>
-	<dependencies>
-		<dependency>
-			<groupId>org.openmrs.maven.plugins</groupId>
-			<artifactId>openmrs-packager-maven-plugin</artifactId>
-			<version>1.8.0-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<build>
-		<resources>
-			<resource>
-				<directory>${project.basedir}</directory>
-				<includes>
-					<include>content.properties</include>
-				</includes>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.openmrs.maven.plugins</groupId>
@@ -52,6 +39,16 @@
 							<sourceFile>${project.basedir}/content.properties</sourceFile>
 						</configuration>
 					</execution>
+					<!--<execution>
+						<id>validate-configurations</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>validate-configurations</goal>
+						</goals>
+						<configuration>
+							<sourceDir>${project.basedir}/configs</sourceDir>
+						</configuration>						
+					</execution> -->
 				</executions>
 			</plugin>
 			<plugin>
@@ -118,12 +115,11 @@
 			</plugin>
 		</plugins>
 	</build>
-
 	<distributionManagement>
 		<repository>
 			<id>openmrs-repo-modules</id>
 			<name>OpenMRS Nexus Modules</name>
-			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/modules</url>
+			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/releases</url>
 		</repository>
 		<snapshotRepository>
 			<id>openmrs-repo-snapshots</id>
