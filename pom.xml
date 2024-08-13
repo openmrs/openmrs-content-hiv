@@ -117,14 +117,14 @@
 	</build>
 	<distributionManagement>
 		<repository>
-			<id>openmrs-repo-modules</id>
-			<name>OpenMRS Nexus Modules</name>
-			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/releases</url>
+			<id>openmrs-repo-releases</id>
+			<name>OpenMRS Releases Repo</name>
+			<url>https://mavenrepo.openmrs.org/releases</url>
 		</repository>
 		<snapshotRepository>
 			<id>openmrs-repo-snapshots</id>
-			<name>OpenMRS Nexus Snapshots</name>
-			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/snapshots</url>
+			<name>OpenMRS Snapshots Repo</name>
+			<url>https://mavenrepo.openmrs.org/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
