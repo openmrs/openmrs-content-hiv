@@ -27,7 +27,7 @@
 			<plugin>
 				<groupId>org.openmrs.maven.plugins</groupId>
 				<artifactId>openmrs-packager-maven-plugin</artifactId>
-				<version>1.8.0-SNAPSHOT</version>
+				<version>1.8.0</version>
 				<executions>
 					<execution>
 						<id>validate-content-package</id>
@@ -46,8 +46,8 @@
 							<goal>validate-configurations</goal>
 						</goals>
 						<configuration>
-							<sourceDir>${project.basedir}/configs/backend_config</sourceDir>
-						</configuration>						
+							<sourceDir>${project.basedir}/configs</sourceDir>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -115,16 +115,37 @@
 			</plugin>
 		</plugins>
 	</build>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>openmrs-releases</id>
+			<name>OpenMRS JFrog Releases</name>
+			<url>https://openmrs.jfrog.io/artifactory/releases</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>openmrs-snapshots</id>
+			<name>OpenMRS JFrog Snapshots</name>
+			<url>https://openmrs.jfrog.io/artifactory/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 	<distributionManagement>
 		<repository>
-			<id>openmrs-repo-releases</id>
-			<name>OpenMRS Releases Repo</name>
-			<url>https://mavenrepo.openmrs.org/releases</url>
+			<id>openmrs-repo-modules</id>
+			<name>OpenMRS Nexus Modules</name>
+			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/releases</url>
 		</repository>
 		<snapshotRepository>
 			<id>openmrs-repo-snapshots</id>
-			<name>OpenMRS Snapshots Repo</name>
-			<url>https://mavenrepo.openmrs.org/snapshots</url>
+			<name>OpenMRS Nexus Snapshots</name>
+			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
