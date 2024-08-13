@@ -46,7 +46,7 @@
 							<goal>validate-configurations</goal>
 						</goals>
 						<configuration>
-							<sourceDir>${project.basedir}/configs</sourceDir>
+							<sourceDir>${project.basedir}/configs/backend_config</sourceDir>
 						</configuration>
 					</execution>
 				</executions>
