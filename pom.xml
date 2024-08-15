@@ -131,7 +131,7 @@
 								<configuration>
 									<sourceFile>${project.basedir}/content.properties</sourceFile>
 								</configuration>
-							</execution>							
+							</execution>
 						</executions>
 					</plugin>
 				</plugins>
