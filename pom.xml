@@ -139,7 +139,7 @@
 									<goal>validate-configurations</goal>
 								</goals>
 								<configuration>
-									<sourceFile>${project.basedir}/configs/backend_config</sourceFile>
+									<sourceDir>${project.basedir}/configs/backend_config</sourceDir>
 								</configuration>
 							</execution>
 						</executions>
