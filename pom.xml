@@ -131,17 +131,7 @@
 								<configuration>
 									<sourceFile>${project.basedir}/content.properties</sourceFile>
 								</configuration>
-							</execution>
-							<execution>
-								<id>validate-configurations</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>validate-configurations</goal>
-								</goals>
-								<configuration>
-									<sourceDir>${project.basedir}/configs/backend_config</sourceDir>
-								</configuration>
-							</execution>
+							</execution>							
 						</executions>
 					</plugin>
 				</plugins>
@@ -150,7 +140,7 @@
 
 		<!-- Profile to exclude validate-configurations -->
 		<profile>
-			<id>exclude-validate-configurations</id>
+			<id>include-validate-configurations</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -166,6 +156,16 @@
 								</goals>
 								<configuration>
 									<sourceFile>${project.basedir}/content.properties</sourceFile>
+								</configuration>
+							</execution>
+							<execution>
+								<id>validate-configurations</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>validate-configurations</goal>
+								</goals>
+								<configuration>
+									<sourceDir>${project.basedir}/configs/backend_config</sourceDir>
 								</configuration>
 							</execution>
 						</executions>

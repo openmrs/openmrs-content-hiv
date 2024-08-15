@@ -29,4 +29,4 @@ jobs:
       - name: Build with Maven
         id: build_with_maven
         run: |
-          mvn clean verify --batch-mode --file pom.xml -Pexclude-validate-configurations
+          mvn clean verify --batch-mode --file pom.xml
