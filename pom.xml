@@ -24,23 +24,6 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.openmrs.maven.plugins</groupId>
-				<artifactId>openmrs-packager-maven-plugin</artifactId>
-				<version>1.8.0</version>
-				<executions>
-					<execution>
-						<id>validate-content-package</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>validate-content-package</goal>
-						</goals>
-						<configuration>
-							<sourceFile>${project.basedir}/content.properties</sourceFile>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>3.7.1</version>
@@ -55,8 +38,6 @@
 							<descriptors>
 								<descriptor>${project.basedir}/assembly.xml</descriptor>
 							</descriptors>
-							<!-- Setting appendAssemblyId to false ensures that the assembly ID 
-							is not appended to the final name of the assembled artifact -->
 							<appendAssemblyId>false</appendAssemblyId>
 							<finalName>${project.artifactId}-${project.version}</finalName>
 						</configuration>
@@ -118,7 +99,7 @@
 		<repository>
 			<id>openmrs-repo-modules</id>
 			<name>OpenMRS Nexus Modules</name>
-			<url>https://mavenrepo.openmrs.org/releases</url> <!-- Corrected -->
+			<url>https://mavenrepo.openmrs.org/releases</url>
 		</repository>
 		<snapshotRepository>
 			<id>openmrs-repo-snapshots</id>
@@ -126,4 +107,71 @@
 			<url>https://mavenrepo.openmrs.org/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
+
+	<!-- Profiles for execution control -->
+	<profiles>
+		<profile>
+			<id>default-profile</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.openmrs.maven.plugins</groupId>
+						<artifactId>openmrs-packager-maven-plugin</artifactId>
+						<version>1.8.0</version>
+						<executions>
+							<execution>
+								<id>validate-content-package</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>validate-content-package</goal>
+								</goals>
+								<configuration>
+									<sourceFile>${project.basedir}/content.properties</sourceFile>
+								</configuration>
+							</execution>
+							<execution>
+								<id>validate-configurations</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>validate-configurations</goal>
+								</goals>
+								<configuration>
+									<sourceFile>${project.basedir}/configs/backend_config</sourceFile>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<!-- Profile to exclude validate-configurations -->
+		<profile>
+			<id>exclude-validate-configurations</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.openmrs.maven.plugins</groupId>
+						<artifactId>openmrs-packager-maven-plugin</artifactId>
+						<version>1.8.0</version>
+						<executions>
+							<execution>
+								<id>validate-content-package</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>validate-content-package</goal>
+								</goals>
+								<configuration>
+									<sourceFile>${project.basedir}/content.properties</sourceFile>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
