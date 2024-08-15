@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openmrs.content</groupId>
 	<artifactId>hiv</artifactId>
@@ -38,7 +37,7 @@
 						<configuration>
 							<sourceFile>${project.basedir}/content.properties</sourceFile>
 						</configuration>
-					</execution>					
+					</execution>
 				</executions>
 			</plugin>
 			<plugin>
@@ -107,22 +106,11 @@
 	</build>
 	<pluginRepositories>
 		<pluginRepository>
-			<id>openmrs-releases</id>
-			<name>OpenMRS JFrog Releases</name>
+			<id>openmrs-repo</id>
+			<name>OpenMRS Nexus Repository</name>
 			<url>https://openmrs.jfrog.io/artifactory/releases</url>
 			<snapshots>
 				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>openmrs-snapshots</id>
-			<name>OpenMRS JFrog Snapshots</name>
-			<url>https://openmrs.jfrog.io/artifactory/snapshots</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
@@ -130,12 +118,12 @@
 		<repository>
 			<id>openmrs-repo-modules</id>
 			<name>OpenMRS Nexus Modules</name>
-			<url>https://mavenrepo.openmrs.org/nexus/content/repositories/releases</url>
+			<url>https://mavenrepo.openmrs.org/releases</url> <!-- Corrected -->
 		</repository>
 		<snapshotRepository>
 			<id>openmrs-repo-snapshots</id>
 			<name>OpenMRS Nexus Snapshots</name>
-			<url>https://mavenrepo.openmrs.org/nexus/content/repositories/snapshots</url>
+			<url>https://mavenrepo.openmrs.org/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
