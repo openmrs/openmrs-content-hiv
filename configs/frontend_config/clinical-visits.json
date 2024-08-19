@@ -1,0 +1,88 @@
+{
+  "@openmrs/esm-patient-chart-app": {
+    "extensionSlots": {
+      "clinical-visits-slot": {
+        "add": [
+          "encounter-list-table-tabs"
+        ],
+        "configure": {
+          "encounter-list-table-tabs": {
+            "tabDefinitions": [
+              {
+                "tabName": "clinicalVisit",
+                "headerTitle": "clinicalVisit",
+                "displayText": "clinicalVisitEncounters",
+                "encounterType": "cb0a65a7-0587-477e-89b9-cf2fd144f1d4",
+                "columns": [
+                  {
+                    "id": "clinicalVisitDate",
+                    "isDate": true,
+                    "title": "visitDate",
+                    "concept": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "isLink": true
+                  },
+                  {
+                    "id": "clinicalVisitType",
+                    "title": "visitType",
+                    "concept": "8a9809e9-8a0b-4e0e-b1f6-80b0cbbe361b"
+                  },
+                  {
+                    "id": "clinicalScreeningOutcome",
+                    "title": "tBScreeningOutcome",
+                    "concept": "160108AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "clinicalNextAppointmentDate",
+                    "title": "nextAppointmentDate",
+                    "isDate": true,
+                    "concept": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actionsTitle",
+                    "actionOptions": [
+                      {
+                        "formName": "POC Clinical Visit Form v2",
+                        "package": "hiv-care-treatment",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "POC Clinical Visit Form v2",
+                        "package": "hiv-care-treatment",
+                        "label": "editForm",
+                        "mode": "edit"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add",
+                  "moduleName": ""
+                },
+                "formList": [
+                  {
+                    "name": "POC Clinical Visit Form v2",
+                    "uuid": "b3abc4ce-c5ac-3c40-b8e7-442b163670f1"
+                  }
+                ]
+              }
+            ]
+          },
+          "translationOverrides": {
+            "clinicalVisit": "Clinical Visit",
+            "clinicalVisitEncounters": "clinical visit encounters",
+            "visitDate": "Visit Date",
+            "visitType": "Visit Type",
+            "tbScreeningOutcome": "TB Screening Outcome",
+            "nextAppointmentDate": "Next Appointment Date",
+            "actionsTitle": "Actions",
+            "viewDetails": "View Details",
+            "editForm": "Edit Form",
+            "add": "Add"
+          }
+        }
+      }
+    }
+  }
+}

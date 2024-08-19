@@ -1,0 +1,156 @@
+{
+  "@openmrs/esm-patient-chart-app": {
+    "extensionSlots": {
+      "hiv-patient-summary-slot": {
+        "add": [
+          "encounter-tiles-group"
+        ],
+        "configure": {
+          "encounter-tiles-group": {
+            "tilesDefinitions": [
+              {
+                "columns": [
+                  {
+                    "id": "artCohort",
+                    "title": "ArtCohortTitle",
+                    "encounterType": "74bf4fe6-8fdb-4228-be39-680a93a9cf6d",
+                    "concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "isDate": true,
+                    "conceptMappings": [
+                      "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "162572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "164516AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "164431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "160738AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    ]
+                  },
+                  {
+                    "id": "currentRegimen",
+                    "hasSummary": true,
+                    "title": "currentRegimenTitle",
+                    "encounterType": "74bf4fe6-8fdb-4228-be39-680a93a9cf6d",
+                    "concept": "dfbe256e-30ba-4033-837a-2e8477f2e7cd",
+                    "summaryConcept": {
+                      "primaryConcept": "164515AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    }
+                  },
+                  {
+                    "id": "dsdModel",
+                    "title": "dSDModelTitle",
+                    "hasSummary": true,
+                    "encounterType": "62ee5922-a229-48d3-a1da-875c1ffa9436",
+                    "concept": "52824cbe-0e4d-4c18-8179-80b5799f34ed",
+                    "summaryConcept": {
+                      "primaryConcept": "52824cbe-0e4d-4c18-8179-80b5799f34ed"
+                    }
+                  },
+                  {
+                    "id": "populationType",
+                    "title": "populationTypeTitle",
+                    "encounterType": "7e54cd64-f9c3-11eb-8e6a-57478ce139b0",
+                    "concept": "166432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "hasSummary": true,
+                    "summaryConcept": {
+                      "primaryConcept": "d3d4ae96-8c8a-43db-a9dc-dac951f5dcb3",
+                      "secondaryConcept": "2bf14240-b2b2-42b2-8cf3-b5f8a0cb7764"
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "viralLoad",
+                    "title": "currentViralLoad",
+                    "encounterType": "41af1931-184e-45f8-86ca-d42e0db0b8a1",
+                    "concept": "1305AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "hasSummary": true,
+                    "summaryConcept": {
+                      "primaryConcept": "163724AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "isDate": true
+                    }
+                  },
+                  {
+                    "id": "currentVLReason",
+                    "title": "reasonForCurrentVL",
+                    "encounterType": "74bf4fe6-8fdb-4228-be39-680a93a9cf6d",
+                    "concept": "86cc0cfe-bace-4969-94b6-d139f4971d13",
+                    "hasSummary": true,
+                    "summaryConcept": {
+                      "primaryConcept": "163724AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "isDate": true,
+                      "hasCalculatedDate": true
+                    }
+                  },
+                  {
+                    "id": "lastCD4Count",
+                    "title": "lastCD4CountTitle",
+                    "hasSummary": true,
+                    "encounterType": "96adb28e-e417-43a3-8f7d-682f8af5e912",
+                    "concept": "5497AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "summaryConcept": {
+                      "primaryConcept": "163724AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "isDate": true
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "tbScreening",
+                    "title": "tBScreeningTitle",
+                    "encounterType": "cb0a65a7-0587-477e-89b9-cf2fd144f1d4",
+                    "concept": "160108AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "hasSummary": true,
+                    "summaryConcept": {
+                      "primaryConcept": "164515AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "isDate": true
+                    }
+                  },
+                  {
+                    "id": "oIs",
+                    "title": "oIsTitle",
+                    "encounterType": "cb0a65a7-0587-477e-89b9-cf2fd144f1d4",
+                    "concept": "c52ecf45-bd6c-43ed-861b-9a2714878729"
+                  },
+                  {
+                    "id": "nextAppointmentDate",
+                    "title": "nextAppointmentDateTitle",
+                    "hasSummary": true,
+                    "encounterType": "cb0a65a7-0587-477e-89b9-cf2fd144f1d4",
+                    "concept": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "summaryConcept": {
+                      "primaryConcept": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "isDate": true,
+                      "hasCalculatedDate": true
+                    }
+                  },
+                  {
+                    "id": "programStatus",
+                    "title": "programStatusTitle",
+                    "encounterType": "a221448d-512b-4750-84bf-d29be9f802b3",
+                    "concept": "163105AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              }
+            ]
+          },
+          "translationOverrides": {
+            "artCohortTitle": "ART Cohort",
+            "currentRegimen": "Current Regimen",
+            "viralLoad": "Current Viral Load",
+            "dsdModelTitle": "DSD Model",
+            "populationTypeTitle": "Population Type",
+            "reasonForCurrentVL": "Reason For Current VL",
+            "lastCD4CountTitle": "Last CD4 Count",
+            "tbScreeningTitle": "TB Screening",
+            "oIsTitle": "OIs",
+            "nextAppointmentDateTitle": "Next Appointment Date",
+            "programStatusTitle": "Program Status"
+          }
+        }
+      }
+    }
+  }
+}
