@@ -64,6 +64,32 @@
                 ]
               }
             ]
+          },
+          "Translation overrides": {
+            "en": {
+              "clinicalVisit": "Clinical Visit",
+              "clinicalVisitEncounters": "clinical visit encounters",
+              "visitDate": "Visit Date",
+              "visitType": "Visit Type",
+              "tbScreeningOutcome": "TB Screening Outcome",
+              "nextAppointmentDate": "Next Appointment Date",
+              "actionsTitle": "Actions",
+              "viewDetails": "View Details",
+              "editForm": "Edit Form",
+              "add": "Add"
+            },
+            "fr": {
+              "clinicalVisit": "Visite clinique",
+              "clinicalVisitEncounters": "Rencontres de visite clinique",
+              "visitDate": "Date de visite",
+              "visitType": "Type de visite",
+              "tbScreeningOutcome": "Résultat du dépistage de la tuberculose",
+              "nextAppointmentDate": "Date du prochain rendez-vous",
+              "actionsTitle": "Actions",
+              "viewDetails": "Voir les détails",
+              "editForm": "Modifier le formulaire",
+              "add": "Ajouter"
+            }
           }
         }
       }

@@ -175,6 +175,46 @@
                 ]
               }
             ]
+          },
+          "Translation overrides": {
+            "en": {
+              "mentalHealthAssessment": "Mental Health Assessment",
+              "intimatePartnerViolence": "Intimate Partner Violence",
+              "disclosure": "Disclosure",
+              "screeningDateTitle": "Screening Date",
+              "disinterestedInThings": "Disinterested in Things",
+              "depressedTitle": "Depressed",
+              "poorAppetite": "Poor Appetite",
+              "concentrationProblems": "Concentration Problems",
+              "actionsTitle": "Actions",
+              "physicalAbuseTitle": "Physical Abuse",
+              "emotionalAbuseTitle": "Emotional Abuse",
+              "sexualAbuseTitle": "Sexual Abuse",
+              "disclosureDateTitle": "Disclosure Date",
+              "disclosureStageTitle": "Disclosure Stage",
+              "viewDetails": "View Details",
+              "editForm": "Edit Form",
+              "add": "Add"
+            },
+            "fr": {
+              "mentalHealthAssessment": "Évaluation de la santé mentale",
+              "intimatePartnerViolence": "Violence entre partenaires intimes",
+              "disclosure": "Divulgation",
+              "screeningDateTitle": "Date du dépistage",
+              "disinterestedInThings": "Désintéressé des choses",
+              "depressedTitle": "Déprimé",
+              "poorAppetite": "Mauvais appétit",
+              "concentrationProblems": "Problèmes de concentration",
+              "actionsTitle": "Actions",
+              "physicalAbuseTitle": "Abus physique",
+              "emotionalAbuseTitle": "Abus émotionnel",
+              "sexualAbuseTitle": "Abus sexuel",
+              "disclosureDateTitle": "Date de la divulgation",
+              "disclosureStageTitle": "Étape de la divulgation",
+              "viewDetails": "Voir les détails",
+              "editForm": "Modifier le formulaire",
+              "add": "Ajouter"
+            }
           }
         }
       }

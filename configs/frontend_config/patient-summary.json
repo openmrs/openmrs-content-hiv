@@ -135,6 +135,34 @@
                 ]
               }
             ]
+          },
+          "Translation overrides": {
+            "en": {
+              "artCohortTitle": "ART Cohort",
+              "currentRegimen": "Current Regimen",
+              "viralLoad": "Current Viral Load",
+              "dsdModelTitle": "DSD Model",
+              "populationTypeTitle": "Population Type",
+              "reasonForCurrentVL": "Reason For Current VL",
+              "lastCD4CountTitle": "Last CD4 Count",
+              "tbScreeningTitle": "TB Screening",
+              "oIsTitle": "OIs",
+              "nextAppointmentDateTitle": "Next Appointment Date",
+              "programStatusTitle": "Program Status"
+            },
+            "fr": {
+              "artCohortTitle": "Cohorte TAR",
+              "currentRegimen": "Régime actuel",
+              "viralLoad": "Charge virale actuelle",
+              "dsdModelTitle": "Modèle DSD",
+              "populationTypeTitle": "Type de population",
+              "reasonForCurrentVL": "Raison de la charge virale actuelle",
+              "lastCD4CountTitle": "Dernier compte CD4",
+              "tbScreeningTitle": "Dépistage de la tuberculose",
+              "oIsTitle": "IO",
+              "nextAppointmentDateTitle": "Date du prochain rendez-vous",
+              "programStatusTitle": "Statut du programme"
+            }
           }
         }
       }
