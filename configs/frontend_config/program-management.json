@@ -64,12 +64,10 @@
                   }
                 ],
                 "launchOptions": {
-                  "displayText": "add",
-                  "moduleName": ""
+                  "displayText": "add"
                 },
                 "formList": [
                   {
-                    "name": "Service Enrolment Form",
                     "uuid": "8f713e0e-94a0-3c57-9024-69520933802a"
                   }
                 ]
@@ -131,13 +129,11 @@
                     "actionOptions": [
                       {
                         "formName": "ART Therapy Form",
-                        "package": "hiv",
                         "label": "viewDetails",
                         "mode": "view"
                       },
                       {
                         "formName": "ART Therapy Form",
-                        "package": "hiv",
                         "label": "editForm",
                         "mode": "edit"
                       }
@@ -145,12 +141,10 @@
                   }
                 ],
                 "launchOptions": {
-                  "displayText": "add",
-                  "moduleName": ""
+                  "displayText": "add"
                 },
                 "formList": [
                   {
-                    "name": "ART Therapy Form",
                     "uuid": "f99fadd8-feb7-321c-ab58-7569805668e7"
                   }
                 ]
@@ -183,13 +177,11 @@
                     "actionOptions": [
                       {
                         "formName": "Service Delivery Model Form",
-                        "package": "hiv",
                         "label": "viewDetails",
                         "mode": "view"
                       },
                       {
                         "formName": "Service Delivery Model Form",
-                        "package": "hiv",
                         "label": "editForm",
                         "mode": "edit"
                       }
@@ -197,12 +189,10 @@
                   }
                 ],
                 "launchOptions": {
-                  "displayText": "add",
-                  "moduleName": ""
+                  "displayText": "add"
                 },
                 "formList": [
                   {
-                    "name": "Service Delivery Model Form",
                     "uuid": "1e14f841-b42b-3273-93db-807927ca9a82"
                   }
                 ]
@@ -242,13 +232,11 @@
                     "actionOptions": [
                       {
                         "formName": "Transfer Out Form",
-                        "package": "hiv",
                         "label": "viewDetails",
                         "mode": "view"
                       },
                       {
                         "formName": "Transfer Out Form",
-                        "package": "hiv",
                         "label": "editForm",
                         "mode": "edit"
                       }
@@ -256,12 +244,10 @@
                   }
                 ],
                 "launchOptions": {
-                  "displayText": "add",
-                  "moduleName": ""
+                  "displayText": "add"
                 },
                 "formList": [
                   {
-                    "name": "Transfer Out Form",
                     "uuid": "a969288d-6605-361b-b01c-42f6ef25c0f5"
                   }
                 ]
@@ -294,13 +280,11 @@
                     "actionOptions": [
                       {
                         "formName": "Patient Tracing Form",
-                        "package": "hiv",
                         "label": "viewDetails",
                         "mode": "view"
                       },
                       {
                         "formName": "Patient Tracing Form",
-                        "package": "hiv",
                         "label": "editForm",
                         "mode": "edit"
                       }
@@ -308,12 +292,10 @@
                   }
                 ],
                 "launchOptions": {
-                  "displayText": "add",
-                  "moduleName": ""
+                  "displayText": "add"
                 },
                 "formList": [
                   {
-                    "name": "Patient Tracing Form",
                     "uuid": "71f3febd-dd11-322b-9c18-2a8a07d87af1"
                   }
                 ]
@@ -351,13 +333,11 @@
                     "actionOptions": [
                       {
                         "formName": "Death Form",
-                        "package": "hiv",
                         "label": "viewDetails",
                         "mode": "view"
                       },
                       {
                         "formName": "Death Form",
-                        "package": "hiv",
                         "label": "editForm",
                         "mode": "edit"
                       }
@@ -365,51 +345,15 @@
                   }
                 ],
                 "launchOptions": {
-                  "displayText": "add",
-                  "moduleName": ""
+                  "displayText": "add"
                 },
                 "formList": [
                   {
-                    "name": "Death Form",
                     "uuid": "41af2def-841d-38b7-8d2e-df25bdd0b73f"
                   }
                 ]
               }
             ]
-          },
-          "translationOverrides": {
-            "hIVEnrolment": "HIV Enrollment",
-            "enrollment/Re-enrollmentDate": "Enrollment/Re-enrollment Date",
-            "patientTypeAtEnrollment": "Patient Type at Enrollment",
-            "dateConfirmedHIVPositive": "Date confirmed HIV+",
-            "entryPoint": "Entry Point",
-            "populationCategory": "Population Category",
-            "aRTTherapy": "ART Therapy",
-            "date": "Date",
-            "therapyPlanTitle": "Therapy Plan",
-            "regimenTitle": "Regimen",
-            "regimenLine": "Regimen Line",
-            "reasonTitle": "Reason",
-            "serviceDeliveryModel": "Service Delivery Model",
-            "dsdModelTitle": "DSD Model",
-            "status": "Status",
-            "transferOut": "Transfer Out",
-            "transferOutDateTitle": "Transfer Out Date",
-            "visitDateTitle": "Visit Date",
-            "receivingFacility": "Receiving Facility",
-            "verifiedTitle": "Verified",
-            "patientTracing": "Patient Tracing",
-            "contactDateTitle": "Contact Date",
-            "contactMethodTitle": "Contact Method",
-            "contactOutcomeTitle": "Contact Outcome",
-            "death": "Death",
-            "deathDateTitle": "Death Date",
-            "causeOfDeath": "Cause of Death",
-            "specificCauseOfDeath": "Specific cause of Death",
-            "actionsTitle": "Actions",
-            "viewDetails": "View Details",
-            "editForm": "Edit Form",
-            "add": "Add"
           }
         }
       }

@@ -135,19 +135,6 @@
                 ]
               }
             ]
-          },
-          "translationOverrides": {
-            "artCohortTitle": "ART Cohort",
-            "currentRegimen": "Current Regimen",
-            "viralLoad": "Current Viral Load",
-            "dsdModelTitle": "DSD Model",
-            "populationTypeTitle": "Population Type",
-            "reasonForCurrentVL": "Reason For Current VL",
-            "lastCD4CountTitle": "Last CD4 Count",
-            "tbScreeningTitle": "TB Screening",
-            "oIsTitle": "OIs",
-            "nextAppointmentDateTitle": "Next Appointment Date",
-            "programStatusTitle": "Program Status"
           }
         }
       }

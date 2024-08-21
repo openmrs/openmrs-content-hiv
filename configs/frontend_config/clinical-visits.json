@@ -43,13 +43,11 @@
                     "actionOptions": [
                       {
                         "formName": "POC Clinical Visit Form v2",
-                        "package": "hiv-care-treatment",
                         "label": "viewDetails",
                         "mode": "view"
                       },
                       {
                         "formName": "POC Clinical Visit Form v2",
-                        "package": "hiv-care-treatment",
                         "label": "editForm",
                         "mode": "edit"
                       }
@@ -57,29 +55,15 @@
                   }
                 ],
                 "launchOptions": {
-                  "displayText": "add",
-                  "moduleName": ""
+                  "displayText": "add"
                 },
                 "formList": [
                   {
-                    "name": "POC Clinical Visit Form v2",
                     "uuid": "b3abc4ce-c5ac-3c40-b8e7-442b163670f1"
                   }
                 ]
               }
             ]
-          },
-          "translationOverrides": {
-            "clinicalVisit": "Clinical Visit",
-            "clinicalVisitEncounters": "clinical visit encounters",
-            "visitDate": "Visit Date",
-            "visitType": "Visit Type",
-            "tbScreeningOutcome": "TB Screening Outcome",
-            "nextAppointmentDate": "Next Appointment Date",
-            "actionsTitle": "Actions",
-            "viewDetails": "View Details",
-            "editForm": "Edit Form",
-            "add": "Add"
           }
         }
       }

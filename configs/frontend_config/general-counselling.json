@@ -48,25 +48,23 @@
                       {
                         "formName": "Mental Health Assessment Form",
                         "package": "hiv-care-treatment",
-                        "label": "viewDetailsLabel",
+                        "label": "viewDetails",
                         "mode": "view"
                       },
                       {
                         "formName": "Mental Health Assessment Form",
                         "package": "hiv-care-treatment",
-                        "label": "editFormLabel",
+                        "label": "editForm",
                         "mode": "edit"
                       }
                     ]
                   }
                 ],
                 "launchOptions": {
-                  "displayText": "addLabel",
-                  "moduleName": ""
+                  "displayText": "add"
                 },
                 "formList": [
                   {
-                    "name": "Mental Health Assessment Form",
                     "uuid": "2069bd57-d534-3de9-ae24-f1d4e4b2de83"
                   }
                 ]
@@ -109,25 +107,23 @@
                       {
                         "formName": "Intimate Partner Violence Form",
                         "package": "hiv-care-treatment",
-                        "label": "viewDetailsLabel",
+                        "label": "viewDetails",
                         "mode": "view"
                       },
                       {
                         "formName": "Intimate Partner Violence Form",
                         "package": "hiv-care-treatment",
-                        "label": "editFormLabel",
+                        "label": "editForm",
                         "mode": "edit"
                       }
                     ]
                   }
                 ],
                 "launchOptions": {
-                  "displayText": "addLabel",
-                  "moduleName": ""
+                  "displayText": "add"
                 },
                 "formList": [
                   {
-                    "name": "Intimate Partner Violence Form",
                     "uuid": "5c37314f-c558-3720-8780-d123c70f4e23"
                   }
                 ]
@@ -157,49 +153,28 @@
                       {
                         "formName": "Age Appropriate Disclosure Form",
                         "package": "hiv",
-                        "label": "viewDetailsLabel",
+                        "label": "viewDetails",
                         "mode": "view"
                       },
                       {
                         "formName": "Age Appropriate Disclosure Form",
                         "package": "hiv",
-                        "label": "editFormLabel",
+                        "label": "editForm",
                         "mode": "edit"
                       }
                     ]
                   }
                 ],
                 "launchOptions": {
-                  "displayText": "addLabel",
-                  "moduleName": ""
+                  "displayText": "add"
                 },
                 "formList": [
                   {
-                    "name": "Age Appropriate Disclosure Form",
                     "uuid": "cb30cea5-3166-3e88-befb-9141e5f3769d"
                   }
                 ]
               }
             ]
-          },
-          "translationOverrides": {
-            "mentalHealthAssessment": "Mental Health Assessment",
-            "intimatePartnerViolence": "Intimate Partner Violence",
-            "disclosure": "Disclosure",
-            "screeningDateTitle": "Screening Date",
-            "disinterestedInThings": "Disinterested in Things",
-            "depressedTitle": "Depressed",
-            "poorAppetite": "Poor Appetite",
-            "concentrationProblems": "Concentration Problems",
-            "actionsTitle": "Actions",
-            "physicalAbuseTitle": "Physical Abuse",
-            "emotionalAbuseTitle": "Emotional Abuse",
-            "sexualAbuseTitle": "Sexual Abuse",
-            "disclosureDateTitle": "Disclosure Date",
-            "disclosureStageTitle": "Disclosure Stage",
-            "viewDetailsLabel": "View Details",
-            "editFormLabel": "Edit Form",
-            "addLabel": "Add"
           }
         }
       }
