@@ -7,7 +7,7 @@
         ],
         "configure": {
           "nav-group#HIVCareTreatment": {
-            "title": "HIV Care and Treatment",
+            "title": "hIVCareAndTreatment",
             "slotName": "hiv-care-and-treatment-group-slot",
             "isExpanded": true
           }
@@ -25,6 +25,7 @@
     },
     "Translation overrides": {
       "en": {
+        "hIVCareAndTreatment": "HIV Care And Treatment",
         "clinicalVisit": "Clinical Visit",
         "clinicalVisitEncounters": "clinical visit encounters",
         "visitDate": "Visit Date",
