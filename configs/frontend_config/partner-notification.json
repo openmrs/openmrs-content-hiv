@@ -1,7 +1,7 @@
 {
   "@openmrs/esm-patient-chart-app": {
     "extensionSlots": {
-      "partner-notification-slot": {
+      "partner-notification-dashboard": {
         "add": [
           "encounter-list-table-tabs"
         ],

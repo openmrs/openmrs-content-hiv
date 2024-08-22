@@ -3,32 +3,32 @@
     "extensionSlots": {
       "patient-chart-dashboard-slot": {
         "add": [
-          "nav-group#HIVCareTreatment"
+          "global-nav-group#HIVCareTreatment"
         ],
         "configure": {
-          "nav-group#HIVCareTreatment": {
+          "global-nav-group#HIVCareTreatment": {
             "title": "hIVCareAndTreatment",
             "slotName": "hiv-care-and-treatment-group-slot",
             "isExpanded": true
-          },
-          "Translation overrides": {
-            "en": {
-              "hIVCareAndTreatment": "HIV Care And Treatment"
-            },
-            "fr": {
-              "hIVCareAndTreatment": "Soins et traitement du VIH"
-            }
           }
         }
       },
       "hiv-care-and-treatment-group-slot": {
         "add": [
-          "hiv-patient-summary-slot",
-          "program-management-slot",
-          "clinical-visits-slot",
-          "general-counselling-slot",
-          "partner-notification-slot"
+          "hiv-patient-summary-dashboard",
+          "program-management-dashboard",
+          "clinical-visits-dashboard",
+          "general-counselling-dashboard",
+          "partner-notification-dashboard"
         ]
+      }
+    },
+    "Translation overrides": {
+      "en": {
+        "hIVCareAndTreatment": "HIV Care And Treatment"
+      },
+      "fr": {
+        "hIVCareAndTreatment": "Soins et traitement du VIH"
       }
     }
   }

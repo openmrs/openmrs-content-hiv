@@ -1,7 +1,7 @@
 {
   "@openmrs/esm-patient-chart-app": {
     "extensionSlots": {
-      "general-counselling-slot": {
+      "general-counselling-dashboard": {
         "add": [
           "encounter-list-table-tabs"
         ],
