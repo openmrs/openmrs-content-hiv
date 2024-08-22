@@ -10,6 +10,14 @@
             "title": "hIVCareAndTreatment",
             "slotName": "hiv-care-and-treatment-group-slot",
             "isExpanded": true
+          },
+          "Translation overrides": {
+            "en": {
+              "hIVCareAndTreatment": "HIV Care And Treatment"
+            },
+            "fr": {
+              "hIVCareAndTreatment": "Soins et traitement du VIH"
+            }
           }
         }
       },
@@ -21,14 +29,6 @@
           "general-counselling-dashboard",
           "partner-notification-dashboard"
         ]
-      }
-    },
-    "Translation overrides": {
-      "en": {
-        "hIVCareAndTreatment": "HIV Care And Treatment"
-      },
-      "fr": {
-        "hIVCareAndTreatment": "Soins et traitement du VIH"
       }
     }
   }
