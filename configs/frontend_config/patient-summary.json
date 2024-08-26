@@ -9,6 +9,7 @@
           "encounter-tiles-group": {
             "tilesDefinitions": [
               {
+                "tileHeader": "characteristicsTitle",
                 "columns": [
                   {
                     "id": "artCohort",
@@ -58,6 +59,7 @@
                 ]
               },
               {
+                "tileHeader": "hivMonitoring",
                 "columns": [
                   {
                     "id": "viralLoad",
@@ -96,6 +98,7 @@
                 ]
               },
               {
+                "tileHeader": "lastVisitDetails",
                 "columns": [
                   {
                     "id": "tbScreening",
@@ -138,6 +141,9 @@
           },
           "Translation overrides": {
             "en": {
+              "characteristicsTitle": "Characteristics",
+              "hivMonitoring": "HIV Monitoring",
+              "lastVisitDetails": "Last Visit Details",
               "artCohortTitle": "ART Cohort",
               "currentRegimen": "Current Regimen",
               "viralLoad": "Current Viral Load",
