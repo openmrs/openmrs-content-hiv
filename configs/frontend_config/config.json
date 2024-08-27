@@ -1,1 +1,35 @@
-{}
+{
+  "@openmrs/esm-patient-chart-app": {
+    "extensionSlots": {
+      "patient-chart-dashboard-slot": {
+        "add": [
+          "global-nav-group#HIVCareTreatment"
+        ],
+        "configure": {
+          "global-nav-group#HIVCareTreatment": {
+            "title": "hIVCareAndTreatment",
+            "slotName": "hiv-care-and-treatment-group-slot",
+            "isExpanded": true
+          },
+          "Translation overrides": {
+            "en": {
+              "hIVCareAndTreatment": "HIV Care And Treatment"
+            },
+            "fr": {
+              "hIVCareAndTreatment": "Soins et traitement du VIH"
+            }
+          }
+        }
+      },
+      "hiv-care-and-treatment-group-slot": {
+        "add": [
+          "hiv-patient-summary-dashboard",
+          "program-management-dashboard",
+          "clinical-visits-dashboard",
+          "general-counselling-dashboard",
+          "partner-notification-dashboard"
+        ]
+      }
+    }
+  }
+}

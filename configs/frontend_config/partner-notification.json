@@ -1,0 +1,160 @@
+{
+  "@openmrs/esm-patient-chart-app": {
+    "extensionSlots": {
+      "partner-notification-dashboard": {
+        "add": [
+          "encounter-list-table-tabs"
+        ],
+        "configure": {
+          "encounter-list-table-tabs": {
+            "tabDefinitions": [
+              {
+                "tabName": "partnerNotification",
+                "hasFilter": true,
+                "headerTitle": "partnerNotification",
+                "displayText": "partnerNotification",
+                "encounterType": "4dd0ee63-805f-43e9-833c-6386ba97fdc1",
+                "columns": [
+                  {
+                    "id": "contactDate",
+                    "isDate": true,
+                    "title": "contactDateTitle",
+                    "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "name",
+                    "title": "NameTitle",
+                    "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "relationship",
+                    "title": "relationshipTitle",
+                    "concept": "85d3b4fe-c1a9-4e27-a86b-dcc1e30c8a93"
+                  },
+                  {
+                    "id": "hivStatus",
+                    "title": "status",
+                    "concept": "1436AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "type": "hivStatus",
+                    "statusColorMappings": {
+                      "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA": "red",
+                      "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA": "gray",
+                      "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA": "purple"
+                    }
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actionsTitle",
+                    "actionOptions": [
+                      {
+                        "formName": "Partner Notification Form",
+                        "package": "hiv-care-treatment",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "Partner Notification Form",
+                        "package": "hiv-care-treatment",
+                        "label": "editForm",
+                        "mode": "edit"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                },
+                "formList": [
+                  {
+                    "uuid": "8c48efc5-dd85-3795-9f58-8eb436a4edcc"
+                  }
+                ]
+              },
+              {
+                "tabName": "contactTracing",
+                "hasFilter": false,
+                "headerTitle": "contactTracing",
+                "displayText": "contactTracing",
+                "encounterType": "570e9e42-4306-41dc-9bf8-634bbc70a524",
+                "columns": [
+                  {
+                    "id": "contactDate",
+                    "isDate": true,
+                    "title": "contactDateTitle",
+                    "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "contactMethod",
+                    "title": "contactMethodTitle",
+                    "concept": "59c023dd-eed2-4b11-8c34-b88e9439db3c"
+                  },
+                  {
+                    "id": "contactOutcome",
+                    "title": "contactOutcomeTitle",
+                    "concept": "36a3e671-9d60-4109-b41f-046f44f4b389"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actionsTitle",
+                    "actionOptions": [
+                      {
+                        "formName": "Contact Tracing Form",
+                        "package": "hiv-care-treatment",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "Contact Tracing Form",
+                        "package": "hiv-care-treatment",
+                        "label": "editForm",
+                        "mode": "edit"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                },
+                "formList": [
+                  {
+                    "uuid": "94a911a8-8da1-3c12-b696-2f3e78c2e87c"
+                  }
+                ]
+              }
+            ]
+          },
+          "Translation overrides": {
+            "en": {
+              "partnerNotification": "Partner Notification",
+              "contactTracing": "Contact Tracing",
+              "contactDateTitle": "Contact Date",
+              "nameTitle": "Name",
+              "relationshipTitle": "Relationship",
+              "status": "Status",
+              "contactMethodTitle": "Contact Method",
+              "contactOutcomeTitle": "Contact Outcome",
+              "actionsTitle": "Actions",
+              "viewDetails": "View Details",
+              "editForm": "Edit Form",
+              "add": "Add"
+            },
+            "fr": {
+              "partnerNotification": "Notification des partenaires",
+              "contactTracing": "Recherche des contacts",
+              "contactDateTitle": "Date de contact",
+              "nameTitle": "Nom",
+              "relationshipTitle": "Relation",
+              "status": "Statut",
+              "contactMethodTitle": "Méthode de contact",
+              "contactOutcomeTitle": "Résultat du contact",
+              "actionsTitle": "Actions",
+              "viewDetails": "Voir les détails",
+              "editForm": "Modifier le formulaire",
+              "add": "Ajouter"
+            }
+          }
+        }
+      }
+    }
+  }
+}
