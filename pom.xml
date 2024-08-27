@@ -90,7 +90,7 @@
 		<pluginRepository>
 			<id>openmrs-repo</id>
 			<name>OpenMRS Nexus Repository</name>
-			<url>https://openmrs.jfrog.io/artifactory/releases</url>
+			<url>https://mavenrepo.openmrs.org/releases</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
