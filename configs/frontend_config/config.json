@@ -3,10 +3,10 @@
     "extensionSlots": {
       "patient-chart-dashboard-slot": {
         "add": [
-          "global-nav-group#HIVCareTreatment"
+          "nav-group#HIVCareTreatment"
         ],
         "configure": {
-          "global-nav-group#HIVCareTreatment": {
+          "nav-group#HIVCareTreatment": {
             "title": "hIVCareAndTreatment",
             "slotName": "hiv-care-and-treatment-group-slot",
             "isExpanded": true
