@@ -23,12 +23,55 @@
       },
       "hiv-care-and-treatment-group-slot": {
         "add": [
-          "hiv-patient-summary-dashboard",
-          "program-management-dashboard",
-          "clinical-visits-dashboard",
-          "general-counselling-dashboard",
-          "partner-notification-dashboard"
-        ]
+          "dashboard#hct-patient-summary",
+          "dashboard#hct-program-management",
+          "dashboard#hct-clinical-visits",
+          "dashboard#hct-general-counselling",
+          "dashboard#hct-partner-notification"
+        ],
+        "configure": {
+          "dashboard#hct-patient-summary": {
+            "title": "patientSummary",
+            "path": "hct-patient-summary",
+            "slot": "hct-patient-summary-dashboard-slot"
+          },
+          "dashboard#hct-program-management": {
+            "title": "programManagement",
+            "path": "hct-program-management",
+            "slot": "hct-program-management-dashboard-slot"
+          },
+          "dashboard#hct-clinical-visits": {
+            "title": "clinicalVisits",
+            "path": "hct-clinical-visits",
+            "slot": "hct-clinical-visits-dashboard-slot"
+          },
+          "dashboard#hct-general-counselling": {
+            "title": "generalCounselling",
+            "path": "hct-general-counselling",
+            "slot": "hct-general-counselling-dashboard-slot"
+          },
+          "dashboard#hct-partner-notification": {
+            "title": "partnerNotification",
+            "path": "hct-partner-notification",
+            "slot": "hct-partner-notification-dashboard-slot"
+          }
+        },
+        "Translation overrides": {
+          "en": {
+            "patientSummary": "Patient Summary",
+            "programManagement": "Program Management",
+            "clinicalVisits": "Clinical Visists",
+            "partnerNotification": "Partner Notification",
+            "generalCounselling": "General Counselling"
+          },
+          "fr": {
+            "patientSummary": "Résumé du patient",
+            "programManagement": "Gestion du programme",
+            "clinicalVisits": "Visites cliniques",
+            "partnerNotification": "Notification des partenaires",
+            "generalCounselling": "Conseil général"
+          }
+        }
       }
     }
   }
