@@ -1,7 +1,7 @@
 {
   "@openmrs/esm-patient-chart-app": {
     "extensionSlots": {
-      "program-management-dashboard": {
+      "hct-program-management-dashboard-slot": {
         "add": [
           "encounter-list-table-tabs"
         ],

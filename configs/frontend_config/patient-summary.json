@@ -1,12 +1,12 @@
 {
   "@openmrs/esm-patient-chart-app": {
     "extensionSlots": {
-      "hiv-patient-summary-dashboard": {
+      "hct-patient-summary-dashboard-slot": {
         "add": [
-          "encounter-tiles-group"
+          "program-summary"
         ],
         "configure": {
-          "encounter-tiles-group": {
+          "program-summary": {
             "tilesDefinitions": [
               {
                 "tileHeader": "characteristicsTitle",
