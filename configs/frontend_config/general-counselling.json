@@ -86,7 +86,7 @@
                     "id": "physicalAbuse",
                     "title": "physicalAbuseTitle",
                     "isTrueFalseConcept": true,
-                    "concept": "2a228c6a-1575-43d7-9d42-9b68d0629f46"
+                    "concept": "138574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                   },
                   {
                     "id": "emotionalAbuse",
@@ -136,15 +136,9 @@
                 "encounterType": "390c2f21-c1c4-4246-94ca-a026157cd1db",
                 "columns": [
                   {
-                    "id": "disclosureDate",
-                    "isDate": true,
-                    "title": "disclosureDateTitle",
-                    "concept": "85fbdcc8-8dbc-40a9-b85f-5d1bfe1ab63d"
-                  },
-                  {
                     "id": "disclosureStage",
                     "title": "disclosureStageTitle",
-                    "concept": "573f93e2-12f6-483e-aa6e-14e9b76b311a"
+                    "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                   },
                   {
                     "id": "actions",
