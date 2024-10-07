@@ -17,7 +17,9 @@
                 "rendering": "markdown"
               },
               "id": "fooMarkdown",
-              "value": ["**Use this form to:** Transfer out a client"]
+              "value": [
+                "**Use this form to:** Transfer out a client"
+              ]
             }
           ]
         },
@@ -25,35 +27,6 @@
           "label": "Transfer-Out Details",
           "isExpanded": "true",
           "questions": [
-            {
-              "label": "Visit Date",
-              "type": "obs",
-              "questionOptions": {
-                "rendering": "date",
-                "concept": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-              },
-              "id": "dateOfVisit",
-              "behaviours": [
-                {
-                  "intent": "*",
-                  "required": "true",
-                  "unspecified": "ture",
-                  "hide": {
-                    "hideWhenExpression": "false"
-                  },
-                  "validators": [
-                    {
-                      "type": "date",
-                      "allowFutureDates": "false"
-                    },
-                    {
-                      "type": "js_expression",
-                      "failsWhenExpression": "isDateBefore(myValue, '1980-01-01') || myValue < useFieldValue('dateOfFirstVisit')"
-                    }
-                  ]
-                }
-              ]
-            },
             {
               "label": "Receiving Facility",
               "type": "obs",
@@ -295,9 +268,10 @@
     }
   ],
   "processor": "EncounterFormProcessor",
-  "uuid": "a969288d-6605-361b-b01c-42f6ef25c0f5",
+  "uuid": "68fcd696-0cae-4d04-811d-9e48a9a52a4f",
   "referencedForms": [],
-  "encounterType": "3044916a-7e5f-478b-9091-803233f27f91",
+  "encounterType": "e22e39fd-7db2-45e7-80f1-60fa0d5a4378",
   "encounter": "Transfer Out",
-  "allowUnspecifiedAll": true
+  "allowUnspecifiedAll": true,
+  "description": "Transfer out a client"
 }
