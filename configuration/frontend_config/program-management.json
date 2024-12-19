@@ -2,11 +2,9 @@
   "@openmrs/esm-patient-chart-app": {
     "extensionSlots": {
       "hct-program-management-dashboard-slot": {
-        "add": [
-          "encounter-list-table-tabs"
-        ],
+        "add": ["encounter-list"],
         "configure": {
-          "encounter-list-table-tabs": {
+          "encounter-list": {
             "tabDefinitions": [
               {
                 "tabName": "hIVEnrolment",
@@ -19,9 +17,7 @@
                     "isDate": true,
                     "title": "enrollment/Re-enrollmentDate",
                     "concept": "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "fallbackConcepts": [
-                      "1134a5b2-b0a2-4c24-b795-33c21a1a320c"
-                    ]
+                    "fallbackConcepts": ["1134a5b2-b0a2-4c24-b795-33c21a1a320c"]
                   },
                   {
                     "id": "clientDescription",

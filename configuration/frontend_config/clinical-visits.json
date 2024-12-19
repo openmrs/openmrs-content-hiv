@@ -2,11 +2,9 @@
   "@openmrs/esm-patient-chart-app": {
     "extensionSlots": {
       "hct-clinical-visits-dashboard-slot": {
-        "add": [
-          "encounter-list-table-tabs"
-        ],
+        "add": ["encounter-list"],
         "configure": {
-          "encounter-list-table-tabs": {
+          "encounter-list": {
             "tabDefinitions": [
               {
                 "tabName": "clinicalVisit",
