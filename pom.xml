@@ -95,6 +95,14 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</pluginRepository>
+		<pluginRepository>
+			<id>openmrs-repo-snapshots</id>
+			<name>OpenMRS Snapshots Repo</name>
+			<url>https://mavenrepo.openmrs.org/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
 	</pluginRepositories>
 	<distributionManagement>
 		<repository>
