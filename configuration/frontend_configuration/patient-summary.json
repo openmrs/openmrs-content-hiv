@@ -2,12 +2,10 @@
   "@openmrs/esm-patient-chart-app": {
     "extensionSlots": {
       "hct-patient-summary-dashboard-slot": {
-        "add": [
-          "program-summary"
-        ],
+        "add": ["program-summary"],
         "configure": {
           "program-summary": {
-            "tilesDefinitions": [
+            "tileDefinitions": [
               {
                 "tileHeader": "characteristicsTitle",
                 "columns": [
